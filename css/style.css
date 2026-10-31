@@ -1,0 +1,159 @@
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #0f5fa8;
+  --primary-dark: #0b4880;
+  --accent: #e8590c;
+  --accent-dark: #c4470a;
+  --note-bg: #fff8e6;
+  --note-border: #f0c36d;
+  --radius: 10px;
+  --max: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+a { color: var(--primary); }
+img { max-width: 100%; height: auto; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+
+/* 広告表記（ステマ規制対応） */
+.ad-notice {
+  background: #eef2f7;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 4px 16px;
+}
+
+/* ヘッダー */
+.site-header { background: var(--surface); border-bottom: 1px solid var(--border); }
+.site-header .container {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px; padding-top: 12px; padding-bottom: 12px;
+}
+.logo { font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.nav { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
+.nav a { color: var(--text); text-decoration: none; }
+.nav a:hover { color: var(--primary); }
+
+/* ヒーロー */
+.hero {
+  background: linear-gradient(135deg, var(--primary), #1c7ed6);
+  color: #fff; padding: 56px 0 48px;
+}
+.hero h1 { font-size: clamp(24px, 4vw, 36px); line-height: 1.4; margin: 0 0 12px; }
+.hero p { margin: 0 0 24px; opacity: .92; }
+
+/* ボタン */
+.btn {
+  display: inline-block; padding: 12px 24px; border-radius: 999px;
+  font-weight: 700; text-decoration: none; text-align: center; border: none; cursor: pointer;
+}
+.btn-cta { background: var(--accent); color: #fff; box-shadow: 0 3px 0 var(--accent-dark); }
+.btn-cta:hover { background: var(--accent-dark); }
+.btn-ghost { background: #fff; color: var(--primary); }
+.btn-block { display: block; width: 100%; }
+
+/* 本文 */
+main { padding-top: 32px; padding-bottom: 56px; }
+section { margin-bottom: 48px; }
+h2 {
+  font-size: 22px; margin: 0 0 16px; padding-left: 12px;
+  border-left: 5px solid var(--primary); line-height: 1.5;
+}
+h3 { font-size: 18px; margin: 24px 0 8px; }
+
+.article { background: var(--surface); border-radius: var(--radius); padding: 24px; border: 1px solid var(--border); }
+.article h2 { margin-top: 32px; }
+.article h2:first-child { margin-top: 0; }
+
+/* カード */
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px; display: flex; flex-direction: column;
+}
+.card h3 { margin-top: 0; }
+.card p { flex: 1; color: var(--muted); font-size: 14px; }
+.card a.more { font-weight: 700; text-decoration: none; }
+
+/* ランキング */
+.rank-item {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px; margin-bottom: 16px;
+}
+.rank-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.rank-no {
+  flex: none; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--primary); color: #fff; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.rank-head h3 { margin: 0; }
+.rank-item ul { margin: 8px 0 16px; padding-left: 20px; }
+.tag { display: inline-block; font-size: 12px; background: #e7f0fa; color: var(--primary); border-radius: 4px; padding: 0 8px; margin-right: 4px; }
+
+/* 比較表 */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--surface); font-size: 14px; }
+th, td { border: 1px solid var(--border); padding: 10px; text-align: center; vertical-align: middle; }
+thead th { background: #eef2f7; }
+tbody th { background: #fafbfc; text-align: left; white-space: nowrap; }
+td .btn { padding: 8px 14px; font-size: 13px; }
+
+/* 注記 */
+.note {
+  background: var(--note-bg); border: 1px solid var(--note-border); border-radius: var(--radius);
+  padding: 12px 16px; font-size: 14px; margin: 16px 0;
+}
+.small { font-size: 12px; color: var(--muted); }
+
+/* シミュレーター */
+.sim { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.sim-form { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.sim-form label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.sim-form input {
+  width: 100%; padding: 10px; font-size: 16px; border: 1px solid var(--border); border-radius: 6px;
+}
+.sim-result { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: 24px; }
+.sim-result div { background: #f3f6fa; border-radius: 8px; padding: 16px; text-align: center; }
+.sim-result span { display: block; font-size: 13px; color: var(--muted); }
+.sim-result strong { font-size: 22px; }
+.sim-result .total strong { color: var(--accent); }
+.bar { display: flex; height: 18px; border-radius: 9px; overflow: hidden; margin-top: 16px; background: #eee; }
+.bar .principal { background: var(--primary); }
+.bar .gain { background: var(--accent); }
+.legend { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 12px; }
+
+/* 目次 */
+.toc { background: #f3f6fa; border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px; }
+.toc ol { margin: 8px 0 0; padding-left: 20px; }
+
+/* パンくず */
+.breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+.breadcrumb a { color: var(--muted); }
+
+/* フッター */
+.site-footer { background: #1f2937; color: #cbd5e1; padding: 32px 0; font-size: 13px; }
+.site-footer a { color: #cbd5e1; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 16px; }
+
+@media (max-width: 600px) {
+  .article, .sim { padding: 16px; }
+  .hero { padding: 40px 0 32px; }
+}

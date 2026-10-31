@@ -1,0 +1,41 @@
+title: 必要保障額シミュレーター｜死亡保障はいくら必要？｜マネーコンパス
+desc: 遺族の生活費・教育費と、遺族年金・貯蓄などを入力するだけで、死亡保障の不足額の目安を計算できます。
+<main class="container">
+  <div class="breadcrumb"><a href="index.html">ホーム</a> ＞ 必要保障額の試算</div>
+  <h1>必要保障額シミュレーター</h1>
+  <p>もしものときに家族に必要なお金から、公的保障と貯蓄を差し引いて「民間保険で備えるべき額」の目安を出します。</p>
+  <div class="sim">
+    <form id="sim-form" onsubmit="return false">
+      <h3>遺族に必要な支出</h3>
+      <div class="sim-form">
+        <div><label for="living">遺族の毎月の生活費（万円）</label><input id="living" name="living" type="number" min="0" step="0.5" value="20"></div>
+        <div><label for="years">生活費が必要な期間（年）</label><input id="years" name="years" type="number" min="0" max="60" step="1" value="20"></div>
+        <div><label for="education">子どもの教育費の合計（万円）</label><input id="education" name="education" type="number" min="0" step="10" value="1000"></div>
+        <div><label for="housing">住居費の追加分（万円）</label><input id="housing" name="housing" type="number" min="0" step="10" value="0"></div>
+        <div><label for="funeral">葬儀費用など（万円）</label><input id="funeral" name="funeral" type="number" min="0" step="10" value="150"></div>
+      </div>
+      <h3>遺族の収入見込み・準備済みの資産</h3>
+      <div class="sim-form">
+        <div><label for="pension">遺族年金の見込み月額（万円）</label><input id="pension" name="pension" type="number" min="0" step="0.5" value="10"></div>
+        <div><label for="income">配偶者の手取り年収（万円）</label><input id="income" name="income" type="number" min="0" step="10" value="0"></div>
+        <div><label for="savings">貯蓄・金融資産（万円）</label><input id="savings" name="savings" type="number" min="0" step="10" value="500"></div>
+        <div><label for="retirement">死亡退職金・既存の保険金（万円）</label><input id="retirement" name="retirement" type="number" min="0" step="10" value="0"></div>
+      </div>
+    </form>
+    <div class="sim-result">
+      <div><span>必要な支出の合計</span><strong id="res-need">-</strong></div>
+      <div><span>収入見込み＋資産</span><strong id="res-have">-</strong></div>
+      <div class="total"><span>不足額（必要保障額）</span><strong id="res-gap">-</strong></div>
+    </div>
+    <div class="bar"><div class="principal"></div><div class="gain"></div></div>
+    <div class="legend"><i style="background:var(--primary)"></i>公的保障・資産でまかなえる分<i style="background:var(--accent)"></i>不足分</div>
+    <p class="small" id="res-comment"></p>
+    <p class="small">※住宅ローンに団体信用生命保険が付いている場合、ローン残高は支出に含めないでください。遺族年金の見込み額は、ねんきん定期便や日本年金機構の情報で確認してください。物価上昇・運用益・税金は考慮していない簡易的な目安です。</p>
+  </div>
+
+  <section style="margin-top:32px">
+    <h2>不足額がわかったら</h2>
+    <p>不足額を保険でどう埋めるかは、商品の組み合わせ方で保険料が大きく変わります。複数の保険会社を扱う無料相談で比較してもらうのも一つの方法です。</p>
+    <a class="btn btn-cta" href="compare.html">無料保険相談を比較する</a>
+  </section>
+</main>
