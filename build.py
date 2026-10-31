@@ -10,7 +10,7 @@ SITE_NAME_TEXT = "マネーコンパス"
 ROOT = Path(__file__).parent
 
 # 公開URL（末尾の / まで）。独自ドメインにしたらここを書き換える。
-SITE_URL = "https://USERNAME.github.io/REPO/"
+SITE_URL = "https://kokiuchibori.github.io/hoken-compass-bsih/"
 
 # True の間は検索エンジンに登録させない。
 # 「要差し替え」「【要記入】」をすべて埋めてから False にすること。
